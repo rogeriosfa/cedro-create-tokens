@@ -5,8 +5,9 @@
       "transformGroup": "css",
       "buildPath":"build/css/",
       "files": [{
-        "destination": "global.css",
-        "format": "css/variables"
+        "destination": "themes/cedro.css",
+        "format": "css/variables",
+        "filter": "selectGroupCedro"
       }]
     },
     "scss": {

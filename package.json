@@ -1,0 +1,29 @@
+{
+  "name": "cedro-create-tokens",
+  "version": "1.0.0",
+  "description": "This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run: ```bash style-dictionary build ```",
+  "main": "build.js",
+  "files": [
+    "build",
+    "properties"
+  ],
+  "scripts": {
+    "build": "node ./build.js",
+    "clean": "rm -rf build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogeriosfa/cedro-create-tokens.git"
+  },
+  "keywords": ["create tokens","tokens", "ds", "design system", "cedro"],
+  "author": "Rogério Rodrigues",
+  "license": "ISC",
+  "devDependencies": {
+    "style-dictionary": "3.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/rogeriosfa/cedro-create-tokens/issues"
+  },
+  "homepage": "https://github.com/rogeriosfa/cedro-create-tokens#readme"
+}
