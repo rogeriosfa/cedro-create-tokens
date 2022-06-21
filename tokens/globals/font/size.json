@@ -1,0 +1,15 @@
+{
+    "font": {
+        "size": {
+            "xmedium": {
+                "value": "20px"
+            },
+            "small": {
+                "value": "16px"
+            },
+            "xsmall": {
+                "value": "14px"
+            }
+        }
+    }
+}

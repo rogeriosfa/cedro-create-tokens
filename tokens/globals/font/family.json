@@ -1,0 +1,12 @@
+{
+    "font": {
+        "family": {
+            "01": {
+                "value": "Poppins"
+            },
+            "02": {
+                "value": "Roboto"
+            }
+        }
+    }
+}
