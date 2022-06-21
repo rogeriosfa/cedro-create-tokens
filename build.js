@@ -10,6 +10,14 @@ function getStyleDictionaryConfig(brand, theme, platform) {
       `tokens/platforms/${platform}/*.json`
     ],
     "platforms": {
+      "scss": {
+        "transformGroup": "scss",
+        "buildPath": `build/scss/${brand}/${theme}/`,
+        "files": [{
+          "destination": "tokens.scss",
+          "format": "scss/variables"
+        }]
+      },
       "css": {
         "transformGroup": "css",
         "buildPath": `build/css/${brand}/${theme}/`,
@@ -58,7 +66,7 @@ console.log('Build started...');
 
 ['foundation', 'fast', 'people'].map(function (brand) {
   ['light', 'dark'].map(function (theme) {
-    ['css','web', 'ios', 'android'].map(function (platform) {
+    ['scss','css','web', 'ios', 'android'].map(function (platform) {
 
       console.log('\n==============================================');
       console.log(`\nProcessing: [${platform}] [${brand}] [${theme}]`);
