@@ -2,17 +2,17 @@ const StyleDictionaryPackage = require('style-dictionary');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
-function getStyleDictionaryConfig(brand, platform) {
+function getStyleDictionaryConfig(brand, theme, platform) {
   return {
     "source": [
-      `tokens/brands/${brand}/*.json`,
+      `tokens/brands/${brand}/${theme}/*.json`,
       "tokens/globals/**/*.json",
       `tokens/platforms/${platform}/*.json`
     ],
     "platforms": {
       "css": {
         "transformGroup": "css",
-        "buildPath": `build/css/${brand}/`,
+        "buildPath": `build/css/${brand}/${theme}/`,
         "files": [{
           "destination": "tokens.css",
           "format": "css/variables"
@@ -20,7 +20,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "web": {
         "transformGroup": "web",
-        "buildPath": `build/web/${brand}/`,
+        "buildPath": `build/web/${brand}/${theme}/`,
         "files": [{
           "destination": "tokens.scss",
           "format": "scss/variables"
@@ -28,7 +28,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "android": {
         "transformGroup": "android",
-        "buildPath": `build/android/${brand}/`,
+        "buildPath": `build/android/${brand}/${theme}/`,
         "files": [{
           "destination": "tokens.colors.xml",
           "format": "android/colors"
@@ -42,7 +42,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "ios": {
         "transformGroup": "ios",
-        "buildPath": `build/ios/${brand}/`,
+        "buildPath": `build/ios/${brand}/${theme}/`,
         "files": [{
           "destination": "tokens.h",
           "format": "ios/macros"
@@ -56,18 +56,20 @@ console.log('Build started...');
 
 // PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND PLATFORMS
 
-['cedro', 'fast', 'people'].map(function (brand) {
-  ['css','web', 'ios', 'android'].map(function (platform) {
+['foundation', 'fast', 'people'].map(function (brand) {
+  ['light', 'dark'].map(function (theme) {
+    ['css','web', 'ios', 'android'].map(function (platform) {
 
-    console.log('\n==============================================');
-    console.log(`\nProcessing: [${platform}] [${brand}]`);
+      console.log('\n==============================================');
+      console.log(`\nProcessing: [${platform}] [${brand}] [${theme}]`);
 
-    const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(brand, platform));
+      const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(brand, theme, platform));
 
-    StyleDictionary.buildPlatform(platform);
+      StyleDictionary.buildPlatform(platform);
 
-    console.log('\nEnd processing');
+      console.log('\nEnd processing');
 
+    })
   })
 })
 
