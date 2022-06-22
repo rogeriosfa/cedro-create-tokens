@@ -87,24 +87,13 @@ console.log('\n==============================================');
 const { exec } = require('child_process');
 const path = require("path");
 
-/*exec(`git add .`);
+exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
-exec(`git push`);*/
+exec(`git push`);
 
-console.log(
-  `node ${path.resolve('build')}/index.js`
-);
-
-exec(`node ${path.resolve('./build/')}/index.js`, (error, stdout, stderr) => {
-  if (error) {
-      console.log(`error: ${error.message}`);
-      return
-  }
-  if (stderr) {
-      console.log(`stderr: ${stderr}`);
-  }
-  console.log("==Tudo pronto para começar==")
-});
+exec(`git -C "build" add .`);
+exec(`git -C "build" commint -m "atualizando tokens"`);
+exec(`git -C "build" push`);
 
 
 console.log('\nBuild completed!');
