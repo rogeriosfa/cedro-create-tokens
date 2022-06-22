@@ -90,7 +90,16 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`node ./build/index.js`);
+exec(`node ./build/index.js ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
+  if (error) {
+      console.log(`error: ${error.message}`);
+      return
+  }
+  if (stderr) {
+      console.log(`stderr: ${stderr}`);
+  }
+  console.log("==Tudo pronto para começar==")
+});
 
 
 console.log('\nBuild completed!');
