@@ -91,7 +91,7 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`git -C "build" add .`);
+exec(`git -C "/build" add .`);
 exec(`git -C "build" commit -m "atualizando tokens"`);
 exec(`git -C "build" push`);
 
