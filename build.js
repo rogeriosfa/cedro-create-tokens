@@ -84,12 +84,14 @@ console.log('Build started...');
 console.log('\n==============================================');
 
 
-const { exec } = require('node:child_process');
+const { exec } = require('child_process');
 const path = require("path");
 
 exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
+
+console.log(path.resolve(process.cwd()));
 
 exec(`"/build/" ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
   if (error) {
