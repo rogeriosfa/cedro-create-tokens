@@ -91,7 +91,7 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`git -C "/build" add .`, (error, stdout, stderr) => {
+exec(`git -C "build" add .`, (error, stdout, stderr) => {
   if (error) {
     console.log(`error: ${error.message}`);
     return
@@ -100,8 +100,24 @@ exec(`git -C "/build" add .`, (error, stdout, stderr) => {
     console.log(`stderr: ${stderr}`);
   }
 });
-exec(`git -C "/build" commit -m "atualizando tokens"`);
-exec(`git -C "/build" push`);
+exec(`git -C "build" commit -m "atualizando tokens"`, (error, stdout, stderr) => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    return
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+  }
+});
+exec(`git -C "build" push`, (error, stdout, stderr) => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    return
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+  }
+});
 
 
 console.log('\nBuild completed!');
