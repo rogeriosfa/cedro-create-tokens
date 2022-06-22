@@ -85,15 +85,12 @@ console.log('\n==============================================');
 
 
 const { exec } = require('child_process');
-const path = require("path");
 
 exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
-exec(`cd build`);
-exec(`git add .`);
-exec(`git commit -m "atualizações de tokens"`);
-exec(`git push`);
+
+exec('node ./build/index.js');
 
 
 console.log('\nBuild completed!');
