@@ -93,7 +93,7 @@ exec(`git push`);
 
 console.log(path.resolve(process.cwd()));
 
-exec(`"/build/" ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
+exec(`node index.js ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
   if (error) {
       console.log(`error: ${error.message}`);
       return
