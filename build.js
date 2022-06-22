@@ -92,7 +92,7 @@ exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);*/
 
 console.log(
-  "node ${path.resolve('./build/')}/index.js"
+  `node ${path.resolve('build')} index.js`
 );
 
 exec(`node ${path.resolve('./build/')}/index.js`, (error, stdout, stderr) => {
