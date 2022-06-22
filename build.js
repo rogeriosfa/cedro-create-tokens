@@ -91,7 +91,7 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`git -C "build" add .`, (error, stdout, stderr) => {
+/*exec(`git -C "build" add .`, (error, stdout, stderr) => {
   if (error) {
     console.log(`error 1: ${error.message}`);
     return
@@ -117,7 +117,7 @@ exec(`git -C "build" push`, (error, stdout, stderr) => {
   if (stderr) {
     console.log(`stderr 3: ${stderr}`);
   }
-});
+});*/
 
 
 console.log('\nBuild completed!');
