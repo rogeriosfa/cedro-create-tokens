@@ -93,29 +93,29 @@ exec(`git push`);
 
 exec(`git -C "build" add .`, (error, stdout, stderr) => {
   if (error) {
-    console.log(`error: ${error.message}`);
+    console.log(`error 1: ${error.message}`);
     return
   }
   if (stderr) {
-    console.log(`stderr: ${stderr}`);
+    console.log(`stderr 1: ${stderr}`);
   }
 });
 exec(`git -C "build" commit -m "atualizando tokens"`, (error, stdout, stderr) => {
   if (error) {
-    console.log(`error: ${error.message}`);
+    console.log(`error 2: ${error.message}`);
     return
   }
   if (stderr) {
-    console.log(`stderr: ${stderr}`);
+    console.log(`stderr 2: ${stderr}`);
   }
 });
 exec(`git -C "build" push`, (error, stdout, stderr) => {
   if (error) {
-    console.log(`error: ${error.message}`);
+    console.log(`error 3: ${error.message}`);
     return
   }
   if (stderr) {
-    console.log(`stderr: ${stderr}`);
+    console.log(`stderr 3: ${stderr}`);
   }
 });
 
