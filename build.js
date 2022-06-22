@@ -90,7 +90,7 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec('node ./build/index.js');
+exec(`node ./build/index.js`);
 
 
 console.log('\nBuild completed!');
