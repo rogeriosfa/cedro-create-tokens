@@ -40,10 +40,10 @@ function getStyleDictionaryConfig(brand, theme, platform) {
         "files": [{
           "destination": "tokens.colors.xml",
           "format": "android/colors"
-        },{
+        }, {
           "destination": "tokens.dimens.xml",
           "format": "android/dimens"
-        },{
+        }, {
           "destination": "tokens.font_dimens.xml",
           "format": "android/fontDimens"
         }]
@@ -66,7 +66,7 @@ console.log('Build started...');
 
 ['foundation', 'fast', 'people'].map(function (brand) {
   ['light', 'dark'].map(function (theme) {
-    ['scss','css','web', 'ios', 'android'].map(function (platform) {
+    ['scss', 'css', 'web', 'ios', 'android'].map(function (platform) {
 
       console.log('\n==============================================');
       console.log(`\nProcessing: [${platform}] [${brand}] [${theme}]`);
@@ -91,9 +91,17 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`git -C "/build" add .`);
-exec(`git -C "build" commit -m "atualizando tokens"`);
-exec(`git -C "build" push`);
+exec(`git -C "/build" add .`, (error, stdout, stderr) => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    return
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+  }
+});
+exec(`git -C "/build" commit -m "atualizando tokens"`);
+exec(`git -C "/build" push`);
 
 
 console.log('\nBuild completed!');
