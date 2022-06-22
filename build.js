@@ -85,6 +85,7 @@ console.log('\n==============================================');
 
 
 const { exec } = require('child_process');
+const path = require("path");
 
 exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
