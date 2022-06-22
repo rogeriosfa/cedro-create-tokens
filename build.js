@@ -91,7 +91,9 @@ const path = require("path");
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);*/
 
-//console.log(path.resolve('./build'));
+console.log(
+  "node ${path.resolve('./build/')}/index.js"
+);
 
 exec(`node ${path.resolve('./build/')}/index.js`, (error, stdout, stderr) => {
   if (error) {
