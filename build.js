@@ -91,7 +91,7 @@ exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
 exec(`git push`);
 
-exec(`./build/index.js ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
+exec(`node ./build/index.js ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
   if (error) {
       console.log(`error: ${error.message}`);
       return
