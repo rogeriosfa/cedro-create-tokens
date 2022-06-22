@@ -87,13 +87,13 @@ console.log('\n==============================================');
 const { exec } = require('child_process');
 const path = require("path");
 
-exec(`git add .`);
+/*exec(`git add .`);
 exec(`git commit -m "melhorias no tokens"`);
-exec(`git push`);
+exec(`git push`);*/
 
-console.log(path.resolve(process.cwd()));
+//console.log(path.resolve('./build'));
 
-exec(`node index.js ${path.resolve(process.cwd())}`, (error, stdout, stderr) => {
+exec(`node ${path.resolve('./build/')}/index.js`, (error, stdout, stderr) => {
   if (error) {
       console.log(`error: ${error.message}`);
       return
